@@ -1,0 +1,123 @@
+<mat-table #table [dataSource]="dataSource" [@animateStagger]="{value:'50'}">
+
+  <!-- ForecastTime12 Column -->
+  <ng-container matColumnDef="ForecastTime12">
+    <mat-header-cell *matHeaderCellDef fxShow.gt-sm>Forecast Time</mat-header-cell>
+    <mat-cell *matCellDef="let spraycheck" fxShow.gt-sm>
+      <p class="text-truncate font-weight-600">{{spraycheck.ForecastTime12}}</p>
+    </mat-cell>
+  </ng-container>
+
+  <!-- Wind Column -->
+  <ng-container matColumnDef="Wind">
+    <mat-header-cell *matHeaderCellDef fxHide fxShow.gt-sm>Wind</mat-header-cell>
+    <mat-cell *matCellDef="let spraycheck" class="{{spraycheck.RatingWindSpeed}}" fxHide fxShow.gt-sm>
+      <p class="area text-truncate">
+        {{spraycheck.Wind}}
+      </p>
+    </mat-cell>
+  </ng-container>
+  <!-- RainfallProbability Column -->
+  <ng-container matColumnDef="RainfallProbability">
+    <mat-header-cell *matHeaderCellDef fxHide fxShow.gt-sm>Rainfall Probability</mat-header-cell>
+    <mat-cell *matCellDef="let spraycheck" fxHide fxShow.gt-sm>
+      <p class="area text-truncate">
+        {{spraycheck.RainfallProbability}}
+      </p>
+    </mat-cell>
+  </ng-container>
+
+  <!-- Rating Column -->
+  <ng-container matColumnDef="StartDateTime">
+    <mat-header-cell *matHeaderCellDef fxHide fxShow.gt-sm>Time</mat-header-cell>
+    <mat-cell *matCellDef="let spraycheck" fxHide fxShow.gt-sm>
+      <p class="area text-truncate" >
+        {{spraycheck.StartDateTime}}
+      </p>
+    </mat-cell>
+  </ng-container>
+
+  <!-- Rating Column -->
+  <ng-container matColumnDef="Date">
+    <mat-header-cell *matHeaderCellDef fxShow.gt-sm>Date</mat-header-cell>
+    <mat-cell *matCellDef="let spraycheck"  fxShow.gt-sm>
+      <p class="area text-truncate" [innerHtml]="Date">
+        {{spraycheck.Date}}
+      </p>
+    </mat-cell>
+  </ng-container>
+
+  <!-- Rating Column -->
+  <ng-container matColumnDef="WindSpeed">
+    <mat-header-cell *matHeaderCellDef fxHide fxShow.gt-sm>Wind Speed</mat-header-cell>
+    <mat-cell *matCellDef="let spraycheck" class="{{spraycheck.RatingWindSpeed}}"  fxHide fxShow.gt-sm>
+      <p class="area text-truncate" >
+        {{spraycheck.WindSpeed}}
+      </p>
+    </mat-cell>
+  </ng-container>
+
+  <!-- Rating Column -->
+  <ng-container matColumnDef="GustSpeed">
+    <mat-header-cell *matHeaderCellDef fxHide fxShow.gt-sm>Gust Speed</mat-header-cell>
+    <mat-cell *matCellDef="let spraycheck" fxHide fxShow.gt-sm>
+      <p class="area text-truncate" >
+        {{spraycheck.GustSpeed}}
+      </p>
+    </mat-cell>
+  </ng-container>
+
+  <!-- Rating Column -->
+  <ng-container matColumnDef="WindDirectionText">
+    <mat-header-cell *matHeaderCellDef fxHide fxShow.gt-sm>Wind Direction</mat-header-cell>
+    <mat-cell *matCellDef="let spraycheck" fxHide fxShow.gt-sm>
+      <p class="area text-truncate" >
+        {{spraycheck.WindDirectionText}}
+      </p>
+    </mat-cell>
+  </ng-container>
+
+  <!-- Temperature Column -->
+  <ng-container matColumnDef="Temperature">
+    <mat-header-cell *matHeaderCellDef fxHide fxShow.gt-sm>Temperature</mat-header-cell>
+    <mat-cell *matCellDef="let spraycheck" fxHide fxShow.gt-sm>
+      <p class="area text-truncate">
+        {{spraycheck.Temperature}}
+      </p>
+    </mat-cell>
+  </ng-container>
+
+  <!-- Rating Column -->
+  <ng-container matColumnDef="RH">
+    <mat-header-cell *matHeaderCellDef fxHide fxShow.gt-sm>%RH</mat-header-cell>
+    <mat-cell *matCellDef="let spraycheck" fxHide fxShow.gt-sm>
+      <p class="area text-truncate" >
+        {{spraycheck.RH}}
+      </p>
+    </mat-cell>
+  </ng-container>
+  <!-- Rating Column -->
+  <ng-container matColumnDef="DaltaT">
+    <mat-header-cell *matHeaderCellDef fxHide fxShow.gt-sm>DeltaT</mat-header-cell>
+    <mat-cell *matCellDef="let spraycheck" fxHide class="{{spraycheck.RatingDaltaT}}" fxShow.gt-sm>
+      <p class="area text-truncate" >
+        {{spraycheck.DaltaT}}
+      </p>
+    </mat-cell>
+  </ng-container>
+  <!-- Rating Column -->
+  <ng-container matColumnDef="Rating">
+    <mat-header-cell *matHeaderCellDef fxShow.gt-sm>Rating</mat-header-cell>
+    <mat-cell *matCellDef="let spraycheck"  fxShow.gt-sm>
+      <p class="area text-truncate" [innerHtml]="Rating">
+        {{spraycheck.Rating}}
+      </p>
+    </mat-cell>
+  </ng-container>
+  
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let spraycheck; columns: displayedColumns;" class="spraycheck" matRipple
+    [@animate]="{value:'*',params:{y:'100%'}}">
+  </mat-row>
+</mat-table>

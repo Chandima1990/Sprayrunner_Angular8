@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/7f0f2d1f-0514-43f1-ad75-c19acbd3da56/resourceGroups/APIGroup2/providers/Microsoft.Web/sites/sprayrunner7-web",
+    "appService.deploySubpath": "dist"
+}

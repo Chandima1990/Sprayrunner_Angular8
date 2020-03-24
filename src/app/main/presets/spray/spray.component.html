@@ -1,0 +1,29 @@
+<div id="spray" class="page-layout simple right-sidebar inner-scroll h-100-p">
+
+    <!-- CENTER -->
+    <div class="center" fxFlex>
+        <div class="header spray p-24" fxLayout="column" fxLayoutAlign="space-between start">
+            <div class="file-uploader">
+                <button mat-fab color="warn" class="add-file-button"
+                (click)="OnAddNew()" aria-label="Add file"
+                    [@animate]="{value:'*', params:{delay:'300ms',scale:'0.2'}}">
+                    <mat-icon>add</mat-icon>
+                </button>
+            </div>
+        </div>
+        <!-- CONTENT -->
+        <div class="content" fusePerfectScrollbar>
+            <app-spray-list></app-spray-list>
+        </div>
+        <!-- / CONTENT -->
+
+    </div>
+    <!-- / CENTER -->
+
+
+    <!-- SIDEBAR -->
+    <fuse-sidebar  class="sidebar details-sidebar" name="spray-form-sidebar" position="right" lockedOpen="gt-md">
+        <spray-form-sidebar></spray-form-sidebar>
+    </fuse-sidebar>
+    <!-- / SIDEBAR -->
+</div>

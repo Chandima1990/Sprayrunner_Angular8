@@ -1,0 +1,50 @@
+<div class="w-100-p header-section" id="">
+    <!-- HEADER -->
+    <div class="header accent p-16 p-24" fxLayout="column" fxLayoutAlign="start" fxLayout.gt-sm="row"
+        fxLayoutAlign.gt-sm="space-between end">
+        <div class="user-info" fxLayout="column" fxLayoutAlign="center center" fxLayout.gt-sm="row"
+            fxLayoutAlign.gt-sm="start center">
+            <div class="name" [@animate]="{value:'*',params:{delay:'100ms',x:'-25px'}}">
+                <h2 class="center">Spraycheck</h2>
+            </div>
+        </div>
+        <div class="actions" fxLayout="row" fxLayoutAlign="end center" [@animate]="{value:'*',params:{delay:'200ms'}}">
+        </div>
+        <div class="ml-sm-32" fxLayout="row" fxLayoutAlign="center center" fxFlex>
+            <form [formGroup]="spraycheckForm">
+                <div class="search-wrapper mt-16 mt-sm-0" fxFlex fxLayout="row" fxLayoutAlign="start center">
+                    <div class="search">
+                        <mat-form-field fxFlex>
+                            <mat-label>Sprayrun Preset</mat-label>
+                            <mat-select #presetDD formControlName="preset" (selectionChange)="PresetSelected($event)">
+                                <mat-option *ngFor="let preset of presets" [value]="preset">{{preset.label}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                </div>
+            </form>
+
+
+
+        </div>
+    </div>
+    <div class="content">
+        <div class="p-24 text-align:center !important">
+
+            <div fxLayout="row">
+                <div class="content">
+                    <fuse-sidebar fxShow class="sidebar" style="margin-bottom: 10px;border: radius 12px;"
+                        name="spraycheck-main-sidebar" position="left" lockedOpen="gt-sm">
+                        <div class="content" fusePerfectScrollbar>
+                            <spraycheck-main-sidebar [@animate]="{value:'*'}" [RefreshCardContent]="RefreshCardContent">
+                            </spraycheck-main-sidebar>
+                        </div>
+                    </fuse-sidebar>
+                </div>
+
+                <app-spraycheck-list class="w-75-p ml-8" [Rating]="Rating"></app-spraycheck-list>
+            </div>
+        </div>
+    </div>
+</div>

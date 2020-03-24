@@ -1,0 +1,392 @@
+[1mdiff --git a/.editorconfig b/.editorconfig[m
+[1mdeleted file mode 100644[m
+[1mindex e89330a..0000000[m
+[1m--- a/.editorconfig[m
+[1m+++ /dev/null[m
+[36m@@ -1,13 +0,0 @@[m
+[31m-# Editor configuration, see https://editorconfig.org[m
+[31m-root = true[m
+[31m-[m
+[31m-[*][m
+[31m-charset = utf-8[m
+[31m-indent_style = space[m
+[31m-indent_size = 2[m
+[31m-insert_final_newline = true[m
+[31m-trim_trailing_whitespace = true[m
+[31m-[m
+[31m-[*.md][m
+[31m-max_line_length = off[m
+[31m-trim_trailing_whitespace = false[m
+[1mdiff --git a/.gitignore b/.gitignore[m
+[1mdeleted file mode 100644[m
+[1mindex 86d943a..0000000[m
+[1m--- a/.gitignore[m
+[1m+++ /dev/null[m
+[36m@@ -1,46 +0,0 @@[m
+[31m-# See http://help.github.com/ignore-files/ for more about ignoring files.[m
+[31m-[m
+[31m-# compiled output[m
+[31m-/dist[m
+[31m-/tmp[m
+[31m-/out-tsc[m
+[31m-# Only exists if Bazel was run[m
+[31m-/bazel-out[m
+[31m-[m
+[31m-# dependencies[m
+[31m-/node_modules[m
+[31m-[m
+[31m-# profiling files[m
+[31m-chrome-profiler-events*.json[m
+[31m-speed-measure-plugin*.json[m
+[31m-[m
+[31m-# IDEs and editors[m
+[31m-/.idea[m
+[31m-.project[m
+[31m-.classpath[m
+[31m-.c9/[m
+[31m-*.launch[m
+[31m-.settings/[m
+[31m-*.sublime-workspace[m
+[31m-[m
+[31m-# IDE - VSCode[m
+[31m-.vscode/*[m
+[31m-!.vscode/settings.json[m
+[31m-!.vscode/tasks.json[m
+[31m-!.vscode/launch.json[m
+[31m-!.vscode/extensions.json[m
+[31m-.history/*[m
+[31m-[m
+[31m-# misc[m
+[31m-/.sass-cache[m
+[31m-/connect.lock[m
+[31m-/coverage[m
+[31m-/libpeerconnection.log[m
+[31m-npm-debug.log[m
+[31m-yarn-error.log[m
+[31m-testem.log[m
+[31m-/typings[m
+[31m-[m
+[31m-# System Files[m
+[31m-.DS_Store[m
+[31m-Thumbs.db[m
+[1mdiff --git a/.npmrc b/.npmrc[m
+[1mdeleted file mode 100644[m
+[1mindex 0a60c47..0000000[m
+[1m--- a/.npmrc[m
+[1m+++ /dev/null[m
+[36m@@ -1 +0,0 @@[m
+[31m-save-prefix=''[m
+\ No newline at end of file[m
+[1mdiff --git a/.vscode/launch.json b/.vscode/launch.json[m
+[1mdeleted file mode 100644[m
+[1mindex 1348ba4..0000000[m
+[1m--- a/.vscode/launch.json[m
+[1m+++ /dev/null[m
+[36m@@ -1,15 +0,0 @@[m
+[31m-{[m
+[31m-    // Use IntelliSense to learn about possible attributes.[m
+[31m-    // Hover to view descriptions of existing attributes.[m
+[31m-    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387[m
+[31m-    "version": "0.2.0",[m
+[31m-    "configurations": [[m
+[31m-        {[m
+[31m-            "type": "chrome",[m
+[31m-            "request": "launch",[m
+[31m-            "name": "Launch Chrome against localhost",[m
+[31m-            "url": "http://localhost:4200",[m
+[31m-            "webRoot": "${workspaceFolder}"[m
+[31m-        }[m
+[31m-    ][m
+[31m-}[m
+\ No newline at end of file[m
+[1mdiff --git a/.vscode/settings.json b/.vscode/settings.json[m
+[1mdeleted file mode 100644[m
+[1mindex 7f70a0a..0000000[m
+[1m--- a/.vscode/settings.json[m
+[1m+++ /dev/null[m
+[36m@@ -1,4 +0,0 @@[m
+[31m-{[m
+[31m-    "appService.defaultWebAppToDeploy": "/subscriptions/7f0f2d1f-0514-43f1-ad75-c19acbd3da56/resourceGroups/APIGroup2/providers/Microsoft.Web/sites/sprayrunner7-admin",[m
+[31m-    "appService.deploySubpath": "dist\\sprayrunner"[m
+[31m-}[m
+\ No newline at end of file[m
+[1mdiff --git a/CREDITS b/CREDITS[m
+[1mdeleted file mode 100644[m
+[1mindex 682051e..0000000[m
+[1m--- a/CREDITS[m
+[1m+++ /dev/null[m
+[36m@@ -1,16 +0,0 @@[m
+[31m-// -----------------------------------------------------------------------------------------------------[m
+[31m-// @ Image/Vector/Icon Credits[m
+[31m-// -----------------------------------------------------------------------------------------------------[m
+[31m-Avatars - https://uifaces.co/[m
+[31m-Flag icons - http://www.famfamfam.com/lab/icons/flags/[m
+[31m-Frame vector created by Freepik - https://www.freepik.com/free-photos-vectors/frame[m
+[31m-A Walk Amongst Friends - Photo by Kristin Ellis on Unsplash - https://unsplash.com/photos/CbZOGbazDWQ[m
+[31m-Sunrise at Moraine Lake - Photo by Marlon Martinez on Unsplash - https://unsplash.com/photos/woNYcfrnp9M[m
+[31m-Braies Lake - Photo by Luca Nicoletti on Unsplash - https://unsplash.com/photos/dH-L5zPcv3E[m
+[31m-Lago di Sorapis - Photo by eberhard grossgasteiger on Unsplash - https://unsplash.com/photos/6uDg_zb20EM[m
+[31m-Lago di Braies - Photo by Salmen Bejaoui on Unsplash - https://unsplash.com/photos/uXTozY3CcQg[m
+[31m-Reaching - Photo by Justin Novello on Unsplash - https://unsplash.com/photos/Y14TNvIDllM[m
+[31m-Yosemite - Photo by Tim Mossholder on Unsplash - https://unsplash.com/photos/ZCrtRSSUpGI[m
+[31m-Never Stop Changing - Photo by John Westrock on Unsplash - https://unsplash.com/photos/_GY56uSG70U[m
+[31m-Fall glow - Photo by Casey Horner on Unsplash - https://unsplash.com/photos/gz19zOdgN7w[m
+[31m-First snow - Photo by eberhard grossgasteiger on Unsplash - https://unsplash.com/photos/LRrGf6dBjA4[m
+\ No newline at end of file[m
+[1mdiff --git a/LICENSE b/LICENSE[m
+[1mdeleted file mode 100644[m
+[1mindex b8acfc6..0000000[m
+[1m--- a/LICENSE[m
+[1m+++ /dev/null[m
+[36m@@ -1,2 +0,0 @@[m
+[31m-This project is protected by Envato's Regular License. For more information,[m
+[31m-check the official license page at https://themeforest.net/licenses/terms/regular[m
+\ No newline at end of file[m
+[1mdiff --git a/README.md b/README.md[m
+[1mdeleted file mode 100644[m
+[1mindex cd5002f..0000000[m
+[1m--- a/README.md[m
+[1m+++ /dev/null[m
+[36m@@ -1,34 +0,0 @@[m
+[31m-# Fuse - Angular[m
+[31m-[m
+[31m-Material Design Admin Template with Angular 8 and Angular Material[m
+[31m-[m
+[31m-## The Community[m
+[31m-[m
+[31m-Share your ideas, discuss Fuse and help each other.[m
+[31m-[m
+[31m-[Click here](http://fusetheme.com/community) to see our Community page.[m
+[31m-[m
+[31m-## Development server[m
+[31m-[m
+[31m-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.[m
+[31m-[m
+[31m-## Code scaffolding[m
+[31m-[m
+[31m-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.[m
+[31m-[m
+[31m-## Build[m
+[31m-[m
+[31m-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.[m
+[31m-[m
+[31m-## Running unit tests[m
+[31m-[m
+[31m-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).[m
+[31m-[m
+[31m-## Running end-to-end tests[m
+[31m-[m
+[31m-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).[m
+[31m-[m
+[31m-## Further help[m
+[31m-[m
+[31m-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).[m
+[31m-[m
+[1mdiff --git a/angular.json b/angular.json[m
+[1mdeleted file mode 100644[m
+[1mindex 792dba9..0000000[m
+[1m--- a/angular.json[m
+[1m+++ /dev/null[m
+[36m@@ -1,149 +0,0 @@[m
+[31m-{[m
+[31m-    "$schema": "./node_modules/@angular/cli/lib/config/schema.json",[m
+[31m-    "version": 1,[m
+[31m-    "newProjectRoot": "projects",[m
+[31m-    "projects": {[m
+[31m-        "sprayrunner": {[m
+[31m-            "projectType": "application",[m
+[31m-            "schematics": {[m
+[31m-                "@schematics/angular:component": {[m
+[31m-                    "style": "scss"[m
+[31m-                }[m
+[31m-            },[m
+[31m-            "root": "",[m
+[31m-            "sourceRoot": "src",[m
+[31m-            "prefix": "app",[m
+[31m-            "architect": {[m
+[31m-                "build": {[m
+[31m-                    "builder": "@angular-devkit/build-angular:browser",[m
+[31m-                    "options": {[m
+[31m-                        "outputPath": "dist/sprayrunner",[m
+[31m-                        "index": "src/index.html",[m
+[31m-                        "main": "src/main.ts",[m
+[31m-                        "polyfills": "src/polyfills.ts",[m
+[31m-                        "tsConfig": "tsconfig.app.json",[m
+[31m-                        "aot": false,   [m
+[31m-                        "assets": [[m
+[31m-                            "src/favicon.ico",[m
+[31m-                            "src/assets"[m
+[31m-                        ],[m
+[31m-                        "styles": [[m
+[31m-                            "src/styles.scss"[m
+[31m-                        ],[m
+[31m-                        "scripts": [][m
+[31m-                    },[m
+[31m-                    "configurations": {[m
+[31m-                        "production": {[m
+[31m-                            "fileReplacements": [[m
+[31m-                                {[m
+[31m-                                    "replace": "src/environments/environment.ts",[m
+[31m-                                    "with": "src/environments/environment.prod.ts"[m
+[31m-                                }[m
+[31m-                            ],[m
+[31m-                            "optimization": true,[m
+[31m-                            "outputHashing": "all",[m
+[31m-                            "sourceMap": false,[m
+[31m-                            "extractCss": true,[m
+[31m-                            "namedChunks": false,[m
+[31m-                            "aot": true,[m
+[31m-                            "extractLicenses": true,[m
+[31m-                            "vendorChunk": false,[m
+[31m-                            "buildOptimizer": true,[m
+[31m-                            "budgets": [[m
+[31m-                                {[m
+[31m-                                    "type": "initial",[m
+[31m-                                    "maximumWarning": "4mb",[m
+[31m-                                    "maximumError": "6mb"[m
+[31m-                                },[m
+[31m-                                {[m
+[31m-                                  "type": "anyComponentStyle",[m
+[31m-                                  "maximumWarning": "6kb",[m
+[31m-                                  "maximumError": "10kb"[m
+[31m-                                }[m
+[31m-                            ][m
+[31m-                        },[m
+[31m-                        "ec": {[m
+[31m-                            "sourceMap": true,[m
+[31m-                            "extractCss": true[m
+[31m-                        },[m
+[31m-                        "hmr": {[m
+[31m-                            "fileReplacements": [[m
+[31m-                                {[m
+[31m-                                    "replace": "src/environments/environment.ts",[m
+[31m-                                    "with": "src/environments/environment.hmr.ts"[m
+[31m-                                }[m
+[31m-                            ][m
+[31m-                        }[m
+[31m-                    }[m
+[31m-                },[m
+[31m-                "serve": {[m
+[31m-                    "builder": "@angular-devkit/build-angular:dev-server",[m
+[31m-                    "options": {[m
+[31m-                        "browserTarget": "sprayrunner:build"[m
+[31m-                    },[m
+[31m-                    "configurations": {[m
+[31m-                        "production": {[m
+[31m-                            "browserTarget": "sprayrunner:build:production"[m
+[31m-                        },[m
+[31m-                        "hmr": {[m
+[31m-                            "hmr": true,[m
+[31m-                            "browserTarget": "sprayrunner:build:hmr"[m
+[31m-                        },[m
+[31m-                        "ec": {[m
+[31m-                            "browserTarget": "sprayrunner:build:ec"[m
+[31m-                        }[m
+[31m-                    }[m
+[31m-                },[m
+[31m-                "extract-i18n": {[m
+[31m-                    "builder": "@angular-devkit/build-angular:extract-i18n",[m
+[31m-                    "options": {[m
+[31m-                        "browserTarget": "sprayrunner:build"[m
+[31m-                    }[m
+[31m-                },[m
+[31m-                "test": {[m
+[31m-                    "builder": "@angular-devkit/build-angular:karma",[m
+[31m-                    "options": {[m
+[31m-                        "main": "src/test.ts",[m
+[31m-                        "polyfills": "src/polyfills.ts",[m
+[31m-                        "tsConfig": "tsconfig.spec.json",[m
+[31m-                        "karmaConfig": "karma.conf.js",[m
+[31m-                        "assets": [[m
+[31m-                            "src/favicon.ico",[m
+[31m-                            "src/assets"[m
+[31m-                        ],[m
+[31m-                        "styles": [[m
+[31m-                            "src/styles.scss"[m
+[31m-                        ],[m
+[31m-                        "scripts": [][m
+[31m-                    }[m
+[31m-                },[m
+[31m-                "lint": {[m
+[31m-                    "builder": "@angular-devkit/build-angular:tslint",[m
+[31m-                    "options": {[m
+[31m-                        "tsConfig": [[m
+[31m-                            "tsconfig.app.json",[m
+[31m-                            "tsconfig.spec.json",[m
+[31m-                            "e2e/tsconfig.json"[m
+[31m-                        ],[m
+[31m-                        "exclude": [[m
+[31m-                            "**/node_modules/**"[m
+[31m-                        ][m
+[31m-                    }[m
+[31m-                },[m
+[31m-                "e2e": {[m
+[31m-                    "builder": "@angular-devkit/build-angular:protractor",[m
+[31m-                    "options": {[m
+[31m-                        "protractorConfig": "e2e/protractor.conf.js",[m
+[31m-                        "devServerTarget": "sprayrunner:serve"[m
+[31m-                    },[m
+[31m-                    "configurations": {[m
+[31m-                        "production": {[m
+[31m-                            "devServerTarget": "sprayrunner:serve:production"[m
+[31m-                        }[m
+[31m-                    }[m
+[31m-                }[m
+[31m-            }[m
+[31m-        }[m
+[31m-    },[m
+[31m-    "defaultProject": "sprayrunner"[m
+[31m-}[m
+[1mdiff --git a/browserslist b/browserslist[m
+[1mdeleted file mode 100644[m
+[1mindex b15c7fa..0000000[m
+[1m--- a/browserslist[m
+[1m+++ /dev/null[m
+[36m@@ -1,12 +0,0 @@[m
+[31m-# This file is used by the build system to adjust CSS and JS output to support the specified browsers below.[m
+[31m-# For additional information regarding the format and rule options, please see:[m
+[31m-# https://github.com/browserslist/browserslist#queries[m
+[31m-[m
+[31m-# You can see what browsers were selected by your queries by running:[m
+[31m-#   npx browserslist[m
+[31m-[m
+[31m-> 0.5%[m
+[31m-last 2 versions[m
+[31m-Firefox ESR[m
+[31m-not dead[m
+[31m-not IE 9-11 # For IE 9-11 support, remove 'not'.[m
+[1mdiff --git a/e2e/protractor.conf.js b/e2e/protractor.conf.js[m
+[1mdeleted file mode 100644[m
+[1mindex 7c798cf..0000000[m
+[1m--- a/e2e/protractor.conf.js[m
+[1m+++ /dev/null[m
+[36m@@ -1,32 +0,0 @@[m
+[31m-// @ts-check[m
+[31m-// Protractor configuration file, see link for more information[m
+[31m-// https://github.com/angular/protractor/blob/master/lib/config.ts[m
+[31m-[m
+[31m-const { SpecReporter } = require('jasmine-spec-reporter');[m
+[31m-[m
+[31m-/**[m
+[31m- * @type { import("protractor").Config }[m
+[31m- */[m
+[31m-exports.config = {[m
+[31m-  allScriptsTimeout: 11000,[m
+[31m-  specs: [[m
+[31m-    './src/**/*.e2e-spec.ts'[m
+[31m-  ],[m
+[31m-  capabilities: {[m
+[31m-    browserName: 'chrome'[m
+[31m-  },[m
+[31m-  directConnect: true,[m
+[31m-  baseUrl: 'http://localhost:4200/',[m
+[31m-  framework: 'jasmine',[m
+[31m-  jasmineNodeOpts: {[m
+[31m-    showColors: true,[m
+[31m-    defaultTimeoutInterval: 30000,[m
+[31m-    print: function() {}[m
+[31m-  },[m
+[31m-  onPrepare() {[m
+[31m-    require('ts-node').register({[m
+[31m-      project: require('path').join(__dirname, './tsconfig.json')[m
+[31m-

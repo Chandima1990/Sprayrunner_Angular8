@@ -1,0 +1,84 @@
+<div class="dialog-content-wrapper">
+    <mat-toolbar matDialogTitle class="mat-accent m-0">
+        <mat-toolbar-row fxLayout="row" fxLayoutAlign="space-between center">
+            <span class="title dialog-title">{{dialogTitle}}</span>
+            <button mat-icon-button (click)="matDialogRef.close()" aria-label="Close dialog">
+                <mat-icon>close</mat-icon>
+            </button>
+        </mat-toolbar-row>
+
+    </mat-toolbar>
+    <!-- product-form-dialog -->
+    <div mat-dialog-content class="p-20 pb-0 m-0" fusePerfectScrollbar>
+        <form [formGroup]="productForm">
+            <!-- <input name="ID" formControlName="ID" value="ID" matInput class="hidden" required> -->
+
+            <div fxLayout="row" fxLayoutAlign="start start">
+                <mat-form-field fxFlex class="w-100-p" appearance="outline">
+                    <mat-label>Product</mat-label>
+                    <!-- <mat-select #productDD formControlName="commonName">
+                        <mat-option *ngFor="let CommonName of CommonNames" [value]="CommonName.label">
+                            {{CommonName.label}}
+                        </mat-option>
+                    </mat-select> -->
+                    <input matInput [formControl]="commonNameCtrl" required type="text" [matAutocomplete]="commonName">
+                    <mat-error>Product Name is required!</mat-error>
+                    <mat-autocomplete #commonName="matAutocomplete" [displayWith]="displayFn">
+                        <mat-optgroup *ngFor="let group of filteredCommonNames | async" [label]="group.category">
+                            <mat-option *ngFor="let option of group.products" [value]="option">
+                                {{option.PesticidesCommonName}}
+                            </mat-option>
+                        </mat-optgroup>
+                    </mat-autocomplete>
+                </mat-form-field>
+            </div>
+
+            <div fxLayout="row" fxLayoutAlign="start start">
+                <mat-form-field fxFlex class="w-100-p" appearance="outline">
+                    <mat-label>Application Rate</mat-label>
+                    <input name="rate" formControlName="rate" matInput required>
+                </mat-form-field>
+            </div>
+
+            <div fxLayout="row" fxLayoutAlign="start start">
+                <mat-form-field fxFlex class="w-100-p" appearance="outline">
+                    <mat-label>Volume</mat-label>
+                    <mat-select formControlName="volume" required>
+                        <mat-option value="l">l</mat-option>
+                        <mat-option value="ml">ml</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div fxLayout="row" fxLayoutAlign="start start">
+                <mat-form-field fxFlex class="w-100-p" appearance="outline">
+                    <mat-label>Area</mat-label>
+                    <mat-select formControlName="area" required>
+                        <mat-option value="ac">ac</mat-option>
+                        <mat-option value="ha">ha</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+
+        </form>
+
+    </div>
+
+    <div mat-dialog-actions class="m-0 p-16" fxLayout="row" fxLayoutAlign="end center">
+
+        <button *ngIf="action === 'edit'" mat-button class="mr-8" (click)="matDialogRef.close(['delete',productForm])"
+            aria-label="Delete" matTooltip="Delete">
+            DELETE
+        </button>
+
+        <button *ngIf="action !== 'edit'" mat-button class="save-button" (click)="matDialogRef.close(productForm)"
+            [disabled]="productForm.invalid" aria-label="SAVE">
+            ADD
+        </button>
+
+        <button *ngIf="action === 'edit'" mat-button class="save-button"
+            (click)="matDialogRef.close(['save',productForm])" [disabled]="productForm.invalid" aria-label="SAVE">
+            SAVE
+        </button>
+
+    </div>
+</div>

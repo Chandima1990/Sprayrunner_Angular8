@@ -1,0 +1,51 @@
+<div class="w-100-p header-section" id="">
+    
+    <div class="header accent p-24" fxLayout="column" fxLayoutAlign="center center" fxLayout.gt-sm="row"
+        fxLayoutAlign.gt-sm="space-between end">
+        <div class="user-info" fxLayout="column" fxLayoutAlign="center center" fxLayout.gt-sm="row"
+            fxLayoutAlign.gt-sm="start center">
+            <div class="name" [@animate]="{value:'*',params:{delay:'100ms',x:'-25px'}}">
+                <h2 class="center">Sprayrun</h2>
+            </div>
+        </div>
+        <div class="actions" fxLayout="row" fxLayoutAlign="end center" [@animate]="{value:'*',params:{delay:'200ms'}}">
+        </div>
+    </div>
+    <div class="content">
+        <div class="center p-24 pb-56 pr-sm-92">
+            <mat-vertical-stepper linear #stepper>
+                    <mat-step [stepControl]="firstFormGroup"> 
+                        <ng-template matStepLabel>
+                            <b>
+                                Date, Time & Duration
+                            </b>
+                            <h6 class="m-0">Choose your sprayrun options</h6>
+                        </ng-template>
+                        <app-sprayrun-form-dtd [firstFormGroup]="firstFormGroup"></app-sprayrun-form-dtd>
+                        <br>
+                    </mat-step>
+                    <mat-step [stepControl]="firstFormGroup" >
+                        <ng-template matStepLabel>
+                            <b>
+                                Applicator & Preset
+                            </b>
+                            <h6 class="m-0">Choose your sprayrun options</h6>
+                        </ng-template>
+                        <app-sprayrun-form-ap [firstFormGroup]="firstFormGroup"></app-sprayrun-form-ap>
+                        <br>
+                    </mat-step>
+                    <mat-step>
+                        <ng-template matStepLabel>
+                            <b>
+                                Review & Confirm
+                            </b>
+                            <h6 class="m-0">
+                                Confirm sprayrun details are correct
+                            </h6>
+                        </ng-template>
+                        <app-sprayrun-confirm></app-sprayrun-confirm>
+                    </mat-step>
+            </mat-vertical-stepper>
+        </div>
+    </div>
+</div>

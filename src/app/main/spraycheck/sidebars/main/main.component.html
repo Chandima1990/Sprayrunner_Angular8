@@ -1,0 +1,33 @@
+<div class="sidebar-content">
+    <div class="card">
+        <div class="p-24" fxLayout="row" fxLayoutAlign="start center">
+
+            <!-- USER -->
+            <button mat-fab mat-raised-button class="mr-8" aria-label="Refresh" (click)="RefreshClicked()"
+                matTooltip="Refresh">
+                <mat-icon>sync</mat-icon>
+            </button>
+            <span class="h4" [innerHtml]="RefreshCardContent">Last Refreshed</span>
+            <!-- / USER -->
+
+        </div>
+
+<!-- 
+        <div class="p-8" fxLayout="row" fxLayoutAlign="start center">Spraycheck Category
+        </div> -->
+        <div class="content py-8" fusePerfectScrollbar>
+            <div class="nav material2">
+                <div class="nav-item" aria-label="observational contacted" (click)="changeFilter('observational')">
+                    <a class="nav-link" matRipple [ngClass]="{'active accent':filterBy ==='observational'}">
+                        <div class="title">Observational</div>
+                    </a>
+                </div>
+                <div class="nav-item" aria-label="forecast" (click)="changeFilter('forecast')">
+                    <a class="nav-link" matRipple [ngClass]="{'active accent':filterBy ==='forecast'}">
+                        <div class="title">Forecast</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

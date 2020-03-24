@@ -1,0 +1,144 @@
+@import "src/@fuse/scss/fuse";
+
+:host {
+    position: relative;
+    display: flex;
+    flex: 1 1 auto;
+    width: 100%;
+    height: 100%;
+    min-width: 0;
+
+    .theme-options-button {
+        position: absolute;
+        top: 160px;
+        right: 0;
+        width: 48px;
+        height: 48px;
+        line-height: 48px;
+        text-align: center;
+        cursor: pointer;
+        border-radius: 0;
+        margin: 0;
+        pointer-events: auto;
+        opacity: .90;
+        z-index: 998;
+
+        &.right-side-panel {
+
+            @include media-breakpoint('gt-md') {
+                right: 70px;
+            }
+        }
+
+        &.side-panel-hidden {
+            right: 0 !important;
+        }
+
+        mat-icon {
+            animation: rotating 3s linear infinite;
+        }
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+
+    .theme-options-sidebar {
+        width: 360px;
+        min-width: 360px;
+        max-width: 360px;
+    }
+}
+.width100{
+    width: 100%
+}
+
+.hidden{
+    display: none;
+  }
+.header-section{
+
+    .header {
+        height: 200px;
+        min-height: 20px;
+        max-height: 320px;
+        // background: url('/assets/images/backgrounds/dark-material-bg.jpg') no-repeat 0 45%;
+        background-size: cover;
+
+        .profile-image {
+            margin-right: 24px;
+
+            @include media-breakpoint('sm') {
+                margin: 0 0 16px 0;
+            }
+        }
+
+        .name {
+            font-size: 34px;
+            color: #FFFFFF;
+
+            @include media-breakpoint('sm') {
+                margin-bottom: 32px;
+            }
+        }
+
+        .actions {
+
+            button {
+                text-transform: none;
+                padding: 0 16px;
+                margin: 0 0 0 8px;
+            }
+        }
+    }
+
+    .content {
+        flex: 1;
+
+        mat-tab-group {
+            height: 100%;
+
+            .mat-tab-body-wrapper {
+                flex-grow: 1;
+            }
+        }
+    }
+}
+.add-contact-button {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    padding: 0;
+    z-index: 99;
+
+    @include media-breakpoint('xs') {
+        position: sticky;
+        top: calc(100vh - 120px);
+        bottom: auto;
+    }
+}
+
+.center45{
+    margin-left: 45% !important;
+}
+
+/*Rating Mangement*/
+.css1 {
+    /*width:100%;
+height:100%;*/
+    background: green;
+}
+
+.css2 {
+    /*width:100%;
+height:100%;
+background:amber;*/
+    color: #000 !important;
+    background-color: #ffc107 !important
+}
+
+.css3 {
+    /*width:100%;
+height:100%;*/
+    background: red;
+}

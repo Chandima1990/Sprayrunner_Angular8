@@ -1,0 +1,51 @@
+<div fxLayout="row" fxLayoutAlign="start start">
+    <table class="mat-table mat-elevation-z8">
+        <tr class="mat-header-row">
+            <th class="mat-header-cell">Date</th>
+            <th class="mat-header-cell">Time</th>
+            <th class="mat-header-cell">Duration (hours)</th>
+            <th class="mat-header-cell">Applicator</th>
+            <th class="mat-header-cell">Preset</th>
+        </tr>
+        <tr class="mat-row">
+            <td class="mat-cell">
+                <div fxLayout="row" fxLayoutAlign="start start">
+                    <mat-form-field appearance="outline" fxFlex>
+                        <input matInput disabled [value]="date">
+                    </mat-form-field>
+                </div>
+            </td>
+            <td class="mat-cell">
+                <div fxLayout="row" fxLayoutAlign="start start">
+                    <mat-form-field appearance="outline" fxFlex>
+                        <input matInput disabled [value]="time">
+                    </mat-form-field>
+                </div>
+            </td>
+            <td class="mat-cell">
+                <div fxLayout="row" fxLayoutAlign="start start">
+                    <mat-form-field appearance="outline" fxFlex>
+                        <input disabled matInput [value]="duration">
+                    </mat-form-field>
+                </div>
+            </td>
+            <td class="mat-cell">
+                <div fxLayout="row" fxLayoutAlign="start start">
+                    <mat-form-field appearance="outline" fxFlex>
+                        <input disabled matInput [value]="applicator">
+                    </mat-form-field>
+                </div>
+            </td>
+            <td class="mat-cell">
+                <div fxLayout="row" fxLayoutAlign="start start">
+                    <mat-form-field appearance="outline" fxFlex>
+                        <input disabled matInput [value]="preset">
+                    </mat-form-field>
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>
+<br>
+<button  mat-raised-button type="button" color="primary" class="mr-8" matStepperPrevious>Back</button>
+<button  mat-raised-button type="button" color="primary" (click)="Submit()" matStepperNext>Submit</button>

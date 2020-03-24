@@ -1,0 +1,35 @@
+<div class="center p-24 pb-56 pr-sm-92">
+    <h2 class="start">Equipment Presets</h2>
+    <form [formGroup]="presetForm" class="w-80-p mx-16">
+        <div fxLayout="row" fxLayoutAlign="start start">
+
+            <mat-form-field fxFlex class="w-30-p mr-12" appearance="outline">
+                <mat-label>Nozzle Brand</mat-label>
+                <mat-select #brand_modelDD formControlName="brand_model">
+                    <mat-option *ngFor="let brand_model of Brand_Models" [value]="brand_model.value">
+                        {{brand_model.label}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field fxFlex class="w-30-p mr-12" appearance="outline">
+                <mat-label>Nozzle Size</mat-label>
+                <mat-select #brand_sizeDD formControlName="brand_size">
+                    <mat-option *ngFor="let brand_size of Brand_Sizes" [value]="brand_size.value">{{brand_size.label}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field fxFlex class="w-30-p mr-12" appearance="outline">
+                <mat-label>Target Pressure</mat-label>
+                <mat-select #target_pressureDD formControlName="target_pressure">
+                    <mat-option *ngFor="let target_pressure of Target_Pressures" [value]="target_pressure.value">
+                        {{target_pressure.label}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+
+        </div>
+        <button mat-raised-button type="button" color="primary" (click)="SubmitPreset()" matStepperNext>Submit</button>
+    </form>
+</div>

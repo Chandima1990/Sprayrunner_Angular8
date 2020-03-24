@@ -1,0 +1,35 @@
+<mat-table  [dataSource]="dataSource" [@animateStagger]="{value:'50'}">
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="name">
+    <mat-header-cell *matHeaderCellDef  fxShow.gt-sm>Name</mat-header-cell>
+    <mat-cell *matCellDef="let user"  fxShow.gt-sm>
+      <p class="text-truncate font-weight-600">{{user.FirstName}} {{user.LastName}} </p>
+    </mat-cell>
+  </ng-container>
+
+  <!-- Area Column -->
+  <ng-container matColumnDef="email">
+    <mat-header-cell *matHeaderCellDef fxHide fxShow.gt-sm>Username</mat-header-cell>
+    <mat-cell *matCellDef="let user" fxHide fxShow.gt-sm>
+      <p class="area text-truncate">
+        {{user.Email}}
+      </p>
+    </mat-cell>
+  </ng-container>
+
+  <!-- Area Column -->
+  <ng-container matColumnDef="buttton">
+    <mat-header-cell *matHeaderCellDef  fxShow.gt-sm></mat-header-cell>
+    <mat-cell *matCellDef="let user"  fxShow.gt-sm>
+      <button mat-icon-button style="margin-left: 90%;" (click)="editUser(user)">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+    </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let user; columns: displayedColumns;" class="user"
+    [ngClass]="{'accent-50':checkboxes[user.ID]}" [@animate]="{value:'*',params:{y:'100%'}}">
+  </mat-row>
+</mat-table>

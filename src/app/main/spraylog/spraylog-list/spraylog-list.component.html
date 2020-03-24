@@ -1,0 +1,86 @@
+<mat-table #table [dataSource]="dataSource" [@animateStagger]="{value:'50'}">
+
+    <!-- StartTime Column -->
+    <ng-container matColumnDef="StartTime">
+      <mat-header-cell *matHeaderCellDef fxShow.gt-sm>Time</mat-header-cell>
+      <mat-cell *matCellDef="let spraylog" fxShow.gt-sm>
+        <p class="text-truncate font-weight-600">{{spraylog.StartTime}}</p>
+      </mat-cell>
+    </ng-container>
+  
+    <!-- WindSpeed Column-->
+    <ng-container matColumnDef="WindSpeed">
+      <mat-header-cell *matHeaderCellDef fxHide fxShow.gt-sm>Wind Speed</mat-header-cell>
+      <mat-cell *matCellDef="let spraylog" fxHide fxShow.gt-sm>
+        <p class="area text-truncate">
+          {{spraylog.WindSpeed}}{{spraylog.WindSpeedUnit}}
+        </p>
+      </mat-cell>
+    </ng-container>
+    <!-- GustSpeed Column -->
+    <ng-container matColumnDef="GustSpeed">
+      <mat-header-cell *matHeaderCellDef fxHide fxShow.gt-sm>Gust Speed</mat-header-cell>
+      <mat-cell *matCellDef="let spraylog" fxHide fxShow.gt-sm>
+        <p class="area text-truncate">
+          {{spraylog.GustSpeed}}{{spraylog.GustSpeedUnit}}
+        </p>
+      </mat-cell>
+    </ng-container>
+  
+    <!-- WindDirectionText Column -->
+    <ng-container matColumnDef="WindDirectionText">
+      <mat-header-cell *matHeaderCellDef fxHide fxShow.gt-sm>Wind Direction</mat-header-cell>
+      <mat-cell *matCellDef="let spraylog" fxHide fxShow.gt-sm>
+        <p class="area text-truncate" >
+          {{spraylog.WindDirectionText}}
+        </p>
+      </mat-cell>
+    </ng-container>
+  
+    <!-- Temperature Column -->
+    <ng-container matColumnDef="Temperature">
+      <mat-header-cell *matHeaderCellDef fxHide fxShow.gt-sm>Temperature</mat-header-cell>
+      <mat-cell *matCellDef="let spraylog" fxHide fxShow.gt-sm>
+        <p class="area text-truncate" >
+          {{spraylog.Temperature}}{{spraylog.TemperatureUnit}}
+        </p>
+      </mat-cell>
+    </ng-container>
+  
+    <!-- RH Column -->
+    <ng-container matColumnDef="RH">
+      <mat-header-cell *matHeaderCellDef fxHide fxShow.gt-sm>RH</mat-header-cell>
+      <mat-cell *matCellDef="let spraylog" class="{{spraylog.RH}}"  fxHide fxShow.gt-sm>
+        <p class="area text-truncate" >
+          {{spraylog.RH}}{{spraylog.RHUnit}}
+        </p>
+      </mat-cell>
+    </ng-container>
+  
+    <!-- DeltaT Column -->
+    <!-- <ng-container matColumnDef="DeltaT">
+      <mat-header-cell *matHeaderCellDef fxHide fxShow.gt-sm>DeltaT</mat-header-cell>
+      <mat-cell *matCellDef="let spraylog" fxHide fxShow.gt-sm>
+        <p class="area text-truncate" >
+          {{spraylog.DeltaT}}{{spraylog.DeltaTUnit}}
+        </p>
+      </mat-cell>
+    </ng-container> -->
+  
+    <!-- Rating Column -->
+    <ng-container matColumnDef="Rating">
+      <mat-header-cell *matHeaderCellDef fxShow.gt-sm>Rating</mat-header-cell>
+      <mat-cell *matCellDef="let spraylog" class="{{spraylog.RatingDaltaT}}" fxShow.gt-sm>
+        <p class="area text-truncate" >
+          {{spraylog.Rating}}
+        </p>
+      </mat-cell>
+    </ng-container>
+  
+    
+  
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let spraylog; columns: displayedColumns;" class="spraylog" matRipple
+      [@animate]="{value:'*',params:{y:'100%'}}">
+    </mat-row>
+  </mat-table>

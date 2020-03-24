@@ -1,0 +1,48 @@
+<div class="dialog-content-wrapper">
+    <mat-toolbar matDialogTitle class="mat-accent m-0">
+        <mat-toolbar-row fxLayout="row" fxLayoutAlign="space-between center">
+            <span class="title dialog-title">{{dialogTitle}}</span>
+            <button mat-icon-button (click)="matDialogRef.close()" aria-label="Close dialog">
+                <mat-icon>close</mat-icon>
+            </button>
+        </mat-toolbar-row>
+
+    </mat-toolbar>
+
+    <div mat-dialog-content class="p-20 pb-0 m-0" fusePerfectScrollbar>
+
+        <form [formGroup]="applicatorForm">
+            <input class="hidden" formControlName="Id">
+            <div fxLayout="row" fxLayoutAlign="start start">
+                <mat-form-field fxFlex>
+                    <mat-label>Applicator Name</mat-label>
+                    <mat-select formControlName="user">
+                        <mat-option *ngFor="let user of users" [value]="user.value">{{user.label}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+
+        </form>
+
+    </div>
+
+    <div mat-dialog-actions class="m-0 p-16" fxLayout="row" fxLayoutAlign="end center">
+
+        <button *ngIf="action === 'edit'" mat-button class="mr-8"
+            (click)="matDialogRef.close(['delete',applicatorForm])" aria-label="Delete" matTooltip="Delete">
+            DELETE
+        </button>
+
+        <button *ngIf="action !== 'edit'" mat-button class="save-button" (click)="matDialogRef.close(applicatorForm)"
+            [disabled]="applicatorForm.invalid" aria-label="SAVE">
+            ADD
+        </button>
+
+        <button *ngIf="action === 'edit'" mat-button class="save-button"
+            (click)="matDialogRef.close(['save',applicatorForm])" [disabled]="applicatorForm.invalid" aria-label="SAVE">
+            SAVE
+        </button>
+
+    </div>
+</div>

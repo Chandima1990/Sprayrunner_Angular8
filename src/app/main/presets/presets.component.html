@@ -1,0 +1,66 @@
+<div id="Preset-main" class="w-100-p header-section page-layout simple">
+
+    <div class="header accent p-24" fxLayout="column" fxLayoutAlign="space-between center" fxLayout.gt-sm="column"
+    fxLayoutAlign.gt-sm="space-between start">
+        
+            <div class="name" [@animate]="{value:'*',params:{delay:'100ms',x:'-25px'}}">
+                <h2 class="center">Presets</h2>
+            </div>
+            <div class="search" fxFlex="40" style="width: 40%;">
+                <form [formGroup]="presetDDForm" class="">
+                    <button mat-icon-button *ngIf="deleteBtn" (click)="DeletePreset()" aria-label="Delete"
+                        matTooltip="Delete" class="mt-8">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                    <mat-form-field fxFlex class="w-100-p">
+                        <mat-label>Select Preset</mat-label>
+                        <mat-select #presetDD name="preset" formControlName="preset" (selectionChange)="PresetSelected($event)">
+                            <mat-option *ngFor="let presetv of presets" [value]="presetv">{{presetv.label}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </form>
+
+            </div>
+            
+        <!-- <div class="actions" fxLayout="row" fxLayoutAlign="end center" [@animate]="{value:'*',params:{delay:'200ms'}}">
+            
+        </div> -->
+        <br>
+        <div class="ml-sm-32" fxLayout="row" fxLayoutAlign="start" fxFlex="40%">
+
+            <!-- <form [formGroup]="presetForm" class="w-100-p mx-16"> -->
+            <div class="search-wrapper mt-16 mt-sm-0 w-100-p" fxFlex fxLayout="row" fxLayoutAlign="start start">
+
+            </div>
+            <!-- </form> -->
+        </div>
+    </div>
+    <div class="content h-100-p">
+
+        <mat-tab-group dynamicHeight="true" [selectedIndex]="selectedIndex.value"
+            (selectedIndexChange)="selectedIndex.setValue($event)">
+            <mat-tab label="Applicators">
+                <app-applicators></app-applicators>
+            </mat-tab>
+
+            <mat-tab label="Profile">
+                <app-profile [presetForm]="presetForm"></app-profile>
+            </mat-tab>
+
+            <mat-tab label="Equipment">
+                <app-equipment [presetForm]="presetForm"></app-equipment>
+            </mat-tab>
+
+            <mat-tab label="Spray">
+                <app-spray [preset]="preset"></app-spray>
+            </mat-tab>
+
+
+        </mat-tab-group>
+        <button mat-fab class="accent add-contact-button" style="margin-bottom: -50px;" (click)="newPreset()"
+            aria-label="add preset" title="New Preset" [@animate]="{value:'*', params:{delay:'300ms',scale:'.2'}}">
+            <mat-icon>add</mat-icon>
+        </button>
+    </div>
+</div>

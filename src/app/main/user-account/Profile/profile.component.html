@@ -1,0 +1,21 @@
+<div id="profile" class="p-24 width100">
+    <form name="updateProfile" [formGroup]="updateProfile">
+      <div>
+        <mat-form-field appearance="outline" class="w-40-p" >
+          <mat-label>First Name</mat-label>
+          <input matInput formControlName="FirstName"  [(ngModel)]="FirstName" required type="text">
+          <mat-error>First Name is required!</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="w-40-p">
+          <mat-label>Last Name</mat-label>
+          <input matInput formControlName="LastName" [(ngModel)]="LastName" required type="text">
+          <mat-error>Last Name is required!</mat-error>
+        </mat-form-field>
+      </div>
+        <div fxLayout="row" fxLayoutAlign="center center">
+          <button mat-raised-button type="button" color="primary" (click)="UpdateProfile()">
+            Update
+          </button>
+        </div>
+      </form>
+</div>

@@ -1,0 +1,45 @@
+<mat-table class="ml-52" #table [dataSource]="dataSource" [@animateStagger]="{value:'50'}">
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="paddock">
+        <mat-header-cell *matHeaderCellDef>Paddock</mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.PaddockName}}</mat-cell>
+    </ng-container>
+
+    <!-- Type Column -->
+    <ng-container matColumnDef="crop">
+        <mat-header-cell *matHeaderCellDef fxHide fxShow.gt-md>Crop</mat-header-cell>
+        <mat-cell *matCellDef="let row" fxHide fxShow.gt-md> {{row.CropName}}</mat-cell>
+    </ng-container>
+
+    <!-- Owner Column -->
+    <ng-container matColumnDef="area">
+        <mat-header-cell *matHeaderCellDef fxHide.xs>Area</mat-header-cell>
+        <mat-cell *matCellDef="let row" fxHide.xs> {{row.AreaTreated}}</mat-cell>
+    </ng-container>
+
+    <!-- Size Column -->
+    <ng-container matColumnDef="speed">
+        <mat-header-cell *matHeaderCellDef fxHide.xs>Speed</mat-header-cell>
+        <mat-cell *matCellDef="let row" fxHide.xs>{{row.TravelSpeed}}</mat-cell>
+    </ng-container>
+
+    <!-- Detail Button Column -->
+    <ng-container matColumnDef="detail-button">
+        <mat-header-cell *matHeaderCellDef fxFlex="48px" fxHide.gt-md></mat-header-cell>
+        <mat-cell *matCellDef="let row" fxFlex="48px" fxHide.gt-md>
+            <button mat-icon-button class="sidebar-toggle" fxHide.gt-md
+                    (click)="toggleSidebar('spray-form-sidebar')">
+                <mat-icon class="secondary-text">info</mat-icon>
+            </button>
+        </mat-cell>
+    </ng-container>
+
+    
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"
+             (click)="onSelect(row)"
+             [ngClass]="{'selected' : row == selected}"
+             matRipple [@animate]="{value:'*',params:{y:'100%'}}">
+    </mat-row>
+</mat-table>

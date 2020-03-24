@@ -1,0 +1,112 @@
+<div class="p-24">
+  <div class="width80">
+    <mat-accordion class="example-headers-align ">
+      <mat-expansion-panel hideToggle [expanded]="true">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Password
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <form name="updatePassword" [formGroup]="updatePassword">
+          <div fxLayout="row wrap" fxLayoutAlign="start center" fxFlex="1 0 auto">
+            <mat-form-field appearance="outline" fxFlex="100" class="pr-4">
+              <mat-label>Current Password</mat-label>
+              <input matInput formControlName="Password" [(ngModel)]="Password" required type="password">
+              <mat-error>Current password is required!</mat-error>
+            </mat-form-field>
+          </div>
+          <div fxLayout="row wrap" fxLayoutAlign="start center" fxFlex="1 0 auto">
+            <mat-form-field appearance="outline" fxFlex="100" class="">
+              <mat-label>New Password</mat-label>
+              <input matInput formControlName="NewPassword" [(ngModel)]="NewPassword" required type="password">
+              <mat-error>New password is required!</mat-error>
+            </mat-form-field>
+          </div>
+          <div fxLayout="row wrap" fxLayoutAlign="start center" fxFlex="1 0 auto">
+            <mat-form-field appearance="outline" fxFlex="100" class="pl-4">
+              <mat-label>Confirm Password</mat-label>
+              <input matInput formControlName="ConfirmPassword" [(ngModel)]="ConfirmPassword" required type="password">
+              <mat-error>Confirm password is required!</mat-error>
+            </mat-form-field>
+          </div>
+          <div fxLayout="row" fxLayoutAlign="center center">
+            <button mat-raised-button type="button" color="primary" (click)="UpdatePassword()">
+              Save Password
+            </button>
+          </div>
+        </form>
+      </mat-expansion-panel>
+      <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Email
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <h3>
+          Your email address is
+          <b>
+            <span [innerHtml]="Email"></span> <br>
+          </b>
+        </h3>
+        <form name="updateEmail" [formGroup]="updateEmail">
+          <div fxLayout="row wrap" fxLayoutAlign="start center" fxFlex="1 0 auto">
+            <mat-form-field appearance="outline" fxFlex="100" class="pr-4">
+              <mat-label>Current Password</mat-label>
+              <input matInput formControlName="Password" [(ngModel)]="Password" required type="password">
+              <mat-error>Current password is required!</mat-error>
+            </mat-form-field>
+          </div>
+          <div fxLayout="row wrap" fxLayoutAlign="start center" fxFlex="1 0 auto">
+            <mat-form-field appearance="outline" fxFlex="100" class="pl-4">
+              <mat-label>New Email Address</mat-label>
+              <input matInput formControlName="ConfirmEmail" [(ngModel)]="ConfirmEmail" required type="email">
+              <mat-error>New Email Address is required!</mat-error>
+            </mat-form-field>
+          </div>
+          <div fxLayout="row" fxLayoutAlign="center center">
+            <button mat-raised-button type="button" color="primary" (click)="UpdateEmail()">
+              Update Email
+            </button>
+          </div>
+        </form>
+      </mat-expansion-panel>
+      <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Time Zone
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+      </mat-expansion-panel>
+      <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Language
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+      </mat-expansion-panel>
+      <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Sign Out of Sessions
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+      </mat-expansion-panel>
+      <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Two Factor Authentication
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <form name="changeTFA" [formGroup]="changeTFA">
+          2-step verification
+          <mat-slide-toggle formControlName="TFAStatus" class="push-right" (click)="ChangeTFA(changeTFA.value)">
+          </mat-slide-toggle>
+        </form>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
+</div>
+
+<!-- <button mat-button (click)="openSnackBar()" aria-label="Show an example snack-bar">
+  Pool party!
+</button> -->

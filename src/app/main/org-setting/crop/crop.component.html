@@ -1,0 +1,28 @@
+<div class="p-24">
+    <form name="updateCrops" [formGroup]="updateCrops">
+    <mat-form-field appearance="outline" class="example-chip-list w-60-p">
+        <mat-label>Crops</mat-label>
+        <mat-chip-list #chipList aria-label="Crop selection">
+            <mat-chip *ngFor="let crop of crops" [selectable]="selectable" [removable]="removable"
+                (removed)="remove(crop)">
+                {{crop.label}}
+                <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+            </mat-chip>
+            <input placeholder="Select Crops" #cropInput [formControl]="cropCtrl" [matAutocomplete]="Crops"
+                [matChipInputFor]="chipList" [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                [matChipInputAddOnBlur]="addOnBlur" (matChipInputTokenEnd)="add($event)">
+        </mat-chip-list>
+        <mat-autocomplete #Crops="matAutocomplete" (optionSelected)="selected($event)">
+            <mat-option *ngFor="let crop of filteredCrops | async" [value]="crop">
+                {{crop.label}}
+            </mat-option>
+        </mat-autocomplete>
+    </mat-form-field>
+
+    <div fxLayout="row" fxLayoutAlign="left">
+        <button mat-raised-button type="button" color="primary" (click)="UpdateItemCrops()">
+            Update
+        </button>
+    </div>
+    </form>
+</div>

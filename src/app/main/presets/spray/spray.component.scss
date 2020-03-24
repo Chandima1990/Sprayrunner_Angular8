@@ -1,0 +1,68 @@
+@import "src/@fuse/scss/fuse";
+
+#spray {
+  .sidebar {
+    width: 320px!important;
+    min-width: 320px!important;
+    max-width: 320px!important;
+
+    &.details-sidebar {
+      @include media-breakpoint("gt-md") {
+        z-index: 0;
+      }
+    }
+  }
+
+  .center {
+    overflow: hidden;
+
+    .header.spray {
+      position: absolute;
+      height: 0px;
+      min-height: 0px;
+      max-height: 0px;
+
+      @include media-breakpoint("lt-md") {
+        height: 120px;
+        min-height: 120px;
+        max-height: 120px;
+      }
+
+      .add-file-button {
+        position: relative;
+        bottom: -3px;
+        left: -7px;
+        z-index: 999;
+      }
+    }
+
+    .content {
+      flex: 1 1 auto;
+      overflow: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+  }
+
+  .type-icon {
+    &.folder {
+      &:before {
+        content: "folder";
+        color: #ffb300;
+      }
+    }
+
+    &.document {
+      &:before {
+        content: "insert_drive_file";
+        color: #1565c0;
+      }
+    }
+
+    &.spreadsheet {
+      &:before {
+        content: "insert_chart";
+        color: #4caf50;
+      }
+    }
+  }
+}

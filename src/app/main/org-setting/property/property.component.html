@@ -1,0 +1,91 @@
+<div class="p-24" id="property">
+    <form name="updateOrg" [formGroup]="updateOrg">
+        <input matInput class="hidden" [(ngModel)]="ID" formControlName="ID">
+        <input matInput class="hidden" [(ngModel)]="Userrid" formControlName="Userrid">
+        <input matInput class="hidden" [(ngModel)]="Name" formControlName="Name">
+        <mat-form-field appearance="outline" class="w-40-p">
+            <mat-label>Property Name</mat-label>
+            <input matInput formControlName="PropertyName" [(ngModel)]="PropertyName" required type="text">
+            <mat-error>Property Name is required!</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="w-40-p">
+            <mat-label>Property Owner</mat-label>
+            <input matInput [formControl]="PropertyOwnerControl" [(ngModel)]="PropertyOwner" required type="text"
+                [matAutocomplete]="owner">
+            <mat-error>Property Owner is required!</mat-error>
+            <mat-autocomplete #owner="matAutocomplete" [displayWith]="displayFn">
+                <mat-option *ngFor="let option of filteredOwners | async" [value]="option">{{option.label}}</mat-option>
+            </mat-autocomplete>
+        </mat-form-field>
+
+        <h3>Property Address</h3>
+        <mat-divider></mat-divider>
+
+        <mat-form-field appearance="outline" class="w-80-p">
+            <mat-label>Address Line 1</mat-label>
+            <input matInput formControlName="Address1" [(ngModel)]="Address1" required type="text">
+            <mat-error>Address Line 1 is required!</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="w-80-p">
+            <mat-label>Address Line 2</mat-label>
+            <input matInput formControlName="Address2" [(ngModel)]="Address2" required type="text">
+            <mat-error>Address Line 2 is required!</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="w-40-p">
+            <mat-label>Region</mat-label>
+            <input matInput [formControl]="RegionControl" [(ngModel)]="Region" required type="text"
+                [matAutocomplete]="region" (keypress)="LoadRegion()">
+            <mat-error>Region is required!</mat-error>
+            <mat-autocomplete #region="matAutocomplete" [displayWith]="displayFn" (optionSelected)="SetRegionAttrib()" >
+                <mat-option *ngFor="let option of Regionlist" [value]="option">{{option.label}}
+                </mat-option>
+            </mat-autocomplete>
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="w-40-p">
+            <mat-label>State</mat-label>
+            <input matInput formControlName="State" [(ngModel)]="State" required type="text" [matAutocomplete]="state"
+                (focus)="StateFocus()">
+            <mat-error>State is required!</mat-error>
+            <mat-autocomplete #state="matAutocomplete" [displayWith]="displayFn">
+                <mat-option *ngFor="let option of filteredStates | async" [value]="option">{{option.label}}
+                </mat-option>
+            </mat-autocomplete>
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="w-40-p">
+            <mat-label>Postcode</mat-label>
+            <input matInput formControlName="Postcode" [(ngModel)]="Postcode" required type="text">
+            <mat-error>Postcode is required!</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="w-40-p">
+            <mat-label>Country</mat-label>
+            <input matInput formControlName="Country" [(ngModel)]="Country" required type="text"
+                [matAutocomplete]="country">
+            <mat-error>Country is required!</mat-error>
+            <mat-autocomplete #country="matAutocomplete" [displayWith]="displayFn" (optionSelected)="LoadState()">
+                <mat-option *ngFor="let option of filteredCountries | async" [value]="option">{{option.label}}
+                </mat-option>
+            </mat-autocomplete>
+        </mat-form-field>
+
+        <h3>Property Coordinates</h3>
+        <mat-divider></mat-divider>
+
+        <mat-form-field appearance="outline" class="w-40-p">
+            <mat-label>Longitude</mat-label>
+            <input matInput formControlName="Longitude" [(ngModel)]="Longitude" required type="text">
+            <mat-error>Longitude is required!</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="w-40-p">
+            <mat-label>Latitude</mat-label>
+            <input matInput formControlName="Latitude" [(ngModel)]="Latitude" required type="text">
+            <mat-error>Latitude is required!</mat-error>
+        </mat-form-field>
+
+
+        <div fxLayout="row" fxLayoutAlign="left">
+            <button mat-raised-button type="button" color="primary" (click)="UpdateOrg()">
+                Update
+            </button>
+        </div>
+    </form>
+</div>

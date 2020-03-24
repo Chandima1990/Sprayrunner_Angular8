@@ -1,0 +1,15 @@
+@import "src/@fuse/scss/fuse";
+@import "src/app/app.component";
+.user-info {
+  mat-list {
+    min-width: 200px;
+  }
+  .header-section {
+    .header {
+      .search {
+        min-width: 150px;
+        width: 20%;
+      }
+    }
+  }
+}

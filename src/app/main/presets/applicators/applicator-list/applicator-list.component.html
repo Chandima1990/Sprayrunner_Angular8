@@ -1,0 +1,29 @@
+<mat-table  [dataSource]="dataSource" [@animateStagger]="{value:'50'}">
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="username">
+      <mat-header-cell *matHeaderCellDef  fxShow.gt-sm>Applicator Name</mat-header-cell>
+      <mat-cell *matCellDef="let applicator"  fxShow.gt-sm>
+        <p class="text-truncate font-weight-600">{{applicator.username}} </p>
+      </mat-cell>
+    </ng-container>
+
+    <!-- Area Column -->
+    <ng-container matColumnDef="buttton">
+      <mat-header-cell *matHeaderCellDef  fxShow.gt-sm>
+        <button title="New Applicator" mat-icon-button style="margin-left: 90%;" (click)="newApplicator(applicator)">
+          <mat-icon>more_vert</mat-icon>
+        </button>
+      </mat-header-cell>
+      <mat-cell *matCellDef="let applicator"  fxShow.gt-sm>
+        <button mat-icon-button style="margin-left: 90%;" (click)="editApplicator(applicator)">
+          <mat-icon>more_vert</mat-icon>
+        </button>
+      </mat-cell>
+    </ng-container>
+  
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let applicator; columns: displayedColumns;" class="applicator"
+      [@animate]="{value:'*',params:{y:'100%'}}">
+    </mat-row>
+  </mat-table>

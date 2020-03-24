@@ -1,0 +1,38 @@
+<div class="w-100-p header-section" id="">
+    <!-- HEADER -->
+    <div class="header accent p-24" fxLayout="column" fxLayoutAlign="center center" fxLayout.gt-sm="row"
+        fxLayoutAlign.gt-sm="space-between end">
+        <div class="user-info" fxLayout="column" fxLayoutAlign="center center" fxLayout.gt-sm="row"
+            fxLayoutAlign.gt-sm="start center">
+            <div class="name" [@animate]="{value:'*',params:{delay:'100ms',x:'-25px'}}">
+                <h2 class="center">Spraylog</h2>
+            </div>
+        </div>
+        <div class="actions" fxLayout="row" fxLayoutAlign="end center" [@animate]="{value:'*',params:{delay:'200ms'}}">
+        </div>
+    </div>
+    <div class="content">
+        <div class="p-24 text-align:center !important">
+            <form [formGroup]="spraycheckForm">
+                <div fxLayout="row" fxLayoutAlign="center center">
+                    <mat-form-field class="w-40-p mr-8" appearance="outline" fxFlex>
+                        <mat-label>Applicator</mat-label>
+                        <mat-select #presetDD formControlName="applicator" (selectionChange)="Selected()"   required>
+                            <mat-option *ngFor="let applicator of applicators" [value]="applicator">{{applicator.label}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <mat-form-field class="w-40-p mr-8" appearance="outline" fxFlex>
+                        <mat-label>Date</mat-label>
+                        <input [matDatepicker]="picker" name="date" formControlName="date" matInput (dateChange) = "Selected()" 
+                            required>
+                        <mat-datepicker-toggle matSuffix [for]="picker">
+                        </mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field>
+                </div>
+            </form>
+            <app-spraylog-list [dataSource] = "dataSource"></app-spraylog-list>
+        </div>
+    </div>
+</div>

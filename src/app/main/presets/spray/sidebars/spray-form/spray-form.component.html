@@ -1,0 +1,63 @@
+<!-- SIDEBAR HEADER -->
+<div class="header accent p-24" fxLayout="column" fxLayoutAlign="space-between">
+
+    <div class="toolbar" fxLayout="row" fxLayoutAlign="end center">
+
+        <button mat-icon-button  (click)="deleteSpray()"
+        aria-label="Delete" matTooltip="Delete">
+            <mat-icon>delete</mat-icon>
+        </button>
+        
+    </div>
+
+    <div>
+        <div class="title mb-8">{{selected.PaddockName}}</div>
+        
+    </div>
+</div>
+<!-- / SIDEBAR HEADER -->
+
+<!-- SIDEBAR CONTENT -->
+<div class="content p-24" fusePerfectScrollbar>
+
+    <div class="file-details" [@animate]="{value:'*',params:{delay:'200ms'}}">
+       
+        
+        <form [formGroup]="propertyForm" class="w-100-p">
+
+            <input name="ID" class="hidden" formControlName="ID" [value]="ID" matInput required>
+
+            <div fxLayout="row" fxLayoutAlign="start start">
+                <mat-form-field fxFlex class="w-100-p" appearance="outline">
+                    <mat-label>Paddock</mat-label>
+                    <mat-select #paddockDD formControlName="paddock">
+                        <mat-option *ngFor="let paddock of paddocks" [value]="paddock.value">{{paddock.label}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div fxLayout="row" fxLayoutAlign="start start">
+                <mat-form-field fxFlex class="w-100-p" appearance="outline">
+                    <mat-label>Crop</mat-label>
+                    <mat-select #cropDD formControlName="crop" (selectionChange)="CropChanged($event)">
+                        <mat-option *ngFor="let crop of crops" [value]="crop.value">{{crop.label}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+            </div>
+            
+            <div fxLayout="row" fxLayoutAlign="start start">
+                <mat-form-field fxFlex class="w-100-p" appearance="outline">
+                    <mat-label>Travel Speed</mat-label>
+                    <input name="speed" formControlName="speed" [value]="speed" matInput required>
+                </mat-form-field>
+            </div>
+
+            <button mat-raised-button type="button" color="primary" (click)="SubmitProperty()" matStepperNext>Submit</button>
+        </form>
+        <app-product-list [PresetPropID] = "PresetPropID" [PresetID] = "PresetID"></app-product-list>
+    </div>
+
+</div>
+<!-- / SIDEBAR CONTENT -->

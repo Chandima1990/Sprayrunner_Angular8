@@ -1,0 +1,29 @@
+<form [formGroup]="firstFormGroup">
+    <div fxLayout="row" fxLayoutAlign="start start">
+    <input class="hidden" name="applicator" formControlName="applicator" matInput value="test">
+    <input class="hidden" name="preset" formControlName="preset" matInput value="test">
+
+        <mat-form-field appearance="outline" fxFlex class="w-100-p">
+            <mat-label>Date</mat-label>
+            <input [matDatepicker]="picker" name="date" formControlName="date" matInput required>
+            <mat-datepicker-toggle matSuffix [for]="picker">
+            </mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" fxFlex class="w-100-p">
+            <mat-label>Time</mat-label>
+            <input type="time" name="time" formControlName="time" matInput required>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" fxFlex class="w-100-p">
+            <mat-label>Duration (hours)</mat-label>
+            <input type="number" name="duration" formControlName="duration" matInput required>
+        </mat-form-field>
+
+       
+
+    </div>
+    <button mat-raised-button type="button" color="primary" (click)="ToConfirm()" matStepperNext>Next</button>
+
+</form>

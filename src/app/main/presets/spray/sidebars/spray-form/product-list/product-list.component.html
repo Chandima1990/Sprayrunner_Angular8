@@ -1,0 +1,42 @@
+<mat-table [dataSource]="dataSource" [@animateStagger]="{value:'50'}">
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="ProductName">
+    <mat-header-cell *matHeaderCellDef fxShow.gt-sm>Product Name</mat-header-cell>
+    <mat-cell *matCellDef="let product" fxShow.gt-sm>
+      <p class="text-truncate font-weight-600">{{product.ProductName}} </p>
+    </mat-cell>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="Amount">
+    <mat-header-cell *matHeaderCellDef fxShow.gt-sm>Application Rate</mat-header-cell>
+    <mat-cell *matCellDef="let product" fxShow.gt-sm>
+      <p class="text-truncate font-weight-600">{{product.Amount}} </p>
+    </mat-cell>
+  </ng-container>
+
+  <!-- Edit Column -->
+  <ng-container matColumnDef="button">
+    <mat-header-cell *matHeaderCellDef fxShow.gt-sm>
+      <div fxFlex="row" fxLayoutAlign="end center">
+
+        <button mat-fab class="accent smallFab"  (click)="newProduct()" aria-label="add product"
+          title="New Product" [@animate]="{value:'*', params:{delay:'300ms',scale:'.1'}}">
+          <mat-icon>add</mat-icon>
+        </button>
+      </div>
+    </mat-header-cell>
+    <mat-cell *matCellDef="let product" fxShow.gt-sm>
+      <button mat-icon-button style="margin-left: 90%;" (click)="editProduct(product)">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+    </mat-cell>
+  </ng-container>
+
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let product; columns: displayedColumns;" class="product"
+    [@animate]="{value:'*',params:{y:'100%'}}">
+  </mat-row>
+</mat-table>

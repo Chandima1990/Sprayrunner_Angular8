@@ -1,0 +1,70 @@
+@import "src/@fuse/scss/fuse";
+// @import "src/app/app.component";
+.header-section {
+  .header {
+    // background: url('/assets/images/backgrounds/dark-material-bg.jpg') no-repeat 0 45%;
+    .search-wrapper {
+      width: 100%;
+      max-width: 480px;
+      border-radius: 28px;
+      overflow: hidden;
+      @include mat-elevation(1);
+
+      .search {
+        width: 100%;
+        height: 48px;
+        line-height: 48px;
+        padding: 0 18px;
+        background-color: white;
+        input {
+          width: 100%;
+          height: 48px;
+          min-height: 48px;
+          max-height: 48px;
+          padding: 0 16px;
+          border: none;
+          outline: none;
+        }
+      }
+    }
+    form {
+      width: 100%;
+      margin-left: 25%;
+      .mat-form-field-label {
+        color: rgba(0, 0, 0, 0.5);
+      }
+      .mat-select-value{
+        color:rgba(0, 0, 0, 0.5) ;
+      }
+    }
+    .content {
+      overflow: hidden;
+
+      .sidebar {
+        &:not(.locked-open) {
+          background: white;
+        }
+      }
+    }
+  }
+}
+/*Rating Mangement*/
+.css1 {
+  /*width:100%;
+height:100%;*/
+  background: green;
+}
+
+.css2 {
+  /*width:100%;
+height:100%;
+background:amber;*/
+  color: #000 !important;
+  background-color: #ffc107 !important;
+}
+
+.css3 {
+  /*width:100%;
+height:100%;*/
+  background: red;
+}

@@ -1,0 +1,32 @@
+<div class="w-100-p header-section" id="org-setting">
+    <!-- HEADER -->
+    <div class="header accent p-24" fxLayout="column" fxLayoutAlign="center center" fxLayout.gt-sm="row"
+        fxLayoutAlign.gt-sm="space-between end">
+        <div class="user-info" fxLayout="column" fxLayoutAlign="center center" fxLayout.gt-sm="row"
+            fxLayoutAlign.gt-sm="start center">
+
+            <div class="name" [@animate]="{value:'*',params:{delay:'100ms',x:'-25px'}}">
+                <h2 class="center">Property Settings</h2>
+            </div>
+        </div>
+
+        <div class="actions" fxLayout="row" fxLayoutAlign="end center" [@animate]="{value:'*',params:{delay:'200ms'}}">
+        </div>
+
+    </div>
+    <!-- / HEADER -->
+
+    <div class="content">
+        <mat-tab-group dynamicHeight="true">
+            <mat-tab label="Crop">
+                <app-crop></app-crop>
+            </mat-tab>
+            <mat-tab label="Property">
+                <app-property ></app-property>
+            </mat-tab>
+            <mat-tab label="Paddock">
+                <app-paddock></app-paddock>
+            </mat-tab>
+        </mat-tab-group>
+    </div>
+</div>
